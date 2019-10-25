@@ -33,7 +33,7 @@ class UdacityService {
             case .login: return Endpoints.base + "/session"
             case .logout: return Endpoints.base + "/session"
             case .getUser(let userId): return Endpoints.base + "/users/" + userId
-            case .getUsersLocations: return Endpoints.base + "/StudentLocation?limit=100"
+            case .getUsersLocations: return Endpoints.base + "/StudentLocation?limit=100&order=-updatedAt"
             case .addPost: return Endpoints.base + "/StudentLocation"
             case .putPost(let objectId): return Endpoints.base + "/StudentLocation/" + objectId
             }

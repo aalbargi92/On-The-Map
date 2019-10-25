@@ -19,10 +19,6 @@ class AddInfoViewController: UIViewController {
     
     var studentLocation = StudentLocation()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func findPressed(_ sender: Any) {
         setFinding(true)
         
@@ -82,5 +78,12 @@ class AddInfoViewController: UIViewController {
         findButton.isEnabled = !finding
         
         findButton.showLoading(finding)
+    }
+}
+
+extension AddInfoViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
